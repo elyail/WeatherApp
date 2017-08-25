@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#80000000"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/weatherIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:orientation="horizontal"
+                tools:src="@android:drawable/ic_lock_idle_alarm" />
+
+            <TextView
+                android:id="@+id/cityWeatherDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@id/weatherIcon"
+                android:layout_toRightOf="@id/weatherIcon"
+                android:textColor="@color/white"
+                tools:text="Небольшая облачность" />
+
+            <TextView
+                android:id="@+id/weatherMax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/weatherIcon"
+                android:layout_marginTop="4dp"
+                android:drawableLeft="@android:drawable/arrow_up_float"
+                android:drawablePadding="8dp"
+                android:drawableStart="@android:drawable/arrow_up_float"
+                android:textColor="@color/white"
+                tools:text="19" />
+
+            <TextView
+                android:id="@+id/weatherMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/weatherIcon"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_toEndOf="@id/weatherMax"
+                android:layout_toRightOf="@id/weatherMax"
+                android:drawableLeft="@android:drawable/arrow_down_float"
+                android:drawablePadding="8dp"
+                android:drawableStart="@android:drawable/arrow_down_float"
+                android:textColor="@color/white"
+                tools:text="11" />
+
+            <TextView
+                android:id="@+id/weatherDegree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/weatherMax"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/white"
+                android:textSize="72sp"
+                tools:text="17" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="#80000000"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/weatherIconDescription"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="48dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="48dp"
+                android:layout_marginStart="16dp"
+                android:scaleType="centerInside"
+                 />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/weatherIconDescription"
+                android:layout_toRightOf="@id/weatherIconDescription"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/visibility"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/visibility"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/clouds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/clouds"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/humidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/humidity"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/visibilityDegree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/white"
+                    tools:text="10 км" />
+
+                <TextView
+                    android:id="@+id/cloudsDegree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/white"
+                    tools:text="10" />
+
+                <TextView
+                    android:id="@+id/humidityDegree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/white"
+                    tools:text="95%" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="#80000000"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/forecast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/forecast"
+                android:textColor="@color/white" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/forecastRecyclerListByTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/forecast"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager">
+            </android.support.v7.widget.RecyclerView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/forecastRecyclerListByTime"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp">
+
+                    <TextView
+                        android:id="@+id/dayOfWeek1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        tools:text="Some test1" />
+
+                    <ImageView
+                        android:id="@+id/iconForecast1"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_centerHorizontal="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/minTempForecast1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/white"
+                        tools:text="-15" />
+
+                    <TextView
+                        android:id="@+id/maxTempForecast1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/minTempForecast1"
+                        android:layout_toStartOf="@id/minTempForecast1"
+                        android:paddingLeft="24dp"
+                        android:paddingRight="24dp"
+                        android:textColor="@color/white"
+                        tools:text="-11" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp">
+
+                    <TextView
+                        android:id="@+id/dayOfWeek2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        tools:text="Some test2" />
+
+                    <ImageView
+                        android:id="@+id/iconForecast2"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_centerHorizontal="true"
+                         />
+
+                    <TextView
+                        android:id="@+id/minTempForecast2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/white"
+                        tools:text="-15" />
+
+                    <TextView
+                        android:id="@+id/maxTempForecast2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/minTempForecast2"
+                        android:layout_toStartOf="@id/minTempForecast2"
+                        android:paddingLeft="24dp"
+                        android:paddingRight="24dp"
+                        android:textColor="@color/white"
+                        tools:text="-11" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp">
+
+                    <TextView
+                        android:id="@+id/dayOfWeek3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        tools:text="Some test3" />
+
+                    <ImageView
+                        android:id="@+id/iconForecast3"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_centerHorizontal="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/minTempForecast3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/white"
+                        tools:text="-15" />
+
+                    <TextView
+                        android:id="@+id/maxTempForecast3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/minTempForecast3"
+                        android:layout_toStartOf="@id/minTempForecast3"
+                        android:paddingLeft="24dp"
+                        android:paddingRight="24dp"
+                        android:textColor="@color/white"
+                        tools:text="-11" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp">
+
+                    <TextView
+                        android:id="@+id/dayOfWeek4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        tools:text="Some test4" />
+
+                    <ImageView
+                        android:id="@+id/iconForecast4"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_centerHorizontal="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/minTempForecast4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/white"
+                        tools:text="-15" />
+
+                    <TextView
+                        android:id="@+id/maxTempForecast4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/minTempForecast4"
+                        android:layout_toStartOf="@id/minTempForecast4"
+                        android:paddingLeft="24dp"
+                        android:paddingRight="24dp"
+                        android:textColor="@color/white"
+                        tools:text="-11" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp">
+
+                    <TextView
+                        android:id="@+id/dayOfWeek5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        tools:text="Some test5" />
+
+                    <ImageView
+                        android:id="@+id/iconForecast5"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_centerHorizontal="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/minTempForecast5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/white"
+                        tools:text="-15" />
+
+                    <TextView
+                        android:id="@+id/maxTempForecast5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/minTempForecast5"
+                        android:layout_toStartOf="@id/minTempForecast5"
+                        android:paddingLeft="24dp"
+                        android:paddingRight="24dp"
+                        android:textColor="@color/white"
+                        tools:text="-11" />
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
+

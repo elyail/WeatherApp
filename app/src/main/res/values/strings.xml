@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">WheatherApplication</string>
+    <string name="weatherMax">max</string>
+    <string name="clouds">Облачность</string>
+    <string name="visibility">Видимость</string>
+    <string name="humidity">Влажность</string>
+    <string name="forecast">Прогноз</string>
+</resources>
